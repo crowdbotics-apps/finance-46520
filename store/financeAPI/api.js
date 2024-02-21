@@ -12,6 +12,24 @@ function api_v1_login_create(payload) {
 function api_v1_signup_create(payload) {
   return financeAPI.post(`/api/v1/signup/`, payload)
 }
+function api_v1_test_list(payload) {
+  return financeAPI.get(`/api/v1/test/`)
+}
+function api_v1_test_create(payload) {
+  return financeAPI.post(`/api/v1/test/`, payload)
+}
+function api_v1_test_retrieve(payload) {
+  return financeAPI.get(`/api/v1/test/${payload.id}/`)
+}
+function api_v1_test_update(payload) {
+  return financeAPI.put(`/api/v1/test/${payload.id}/`, payload)
+}
+function api_v1_test_partial_update(payload) {
+  return financeAPI.patch(`/api/v1/test/${payload.id}/`, payload)
+}
+function api_v1_test_destroy(payload) {
+  return financeAPI.delete(`/api/v1/test/${payload.id}/`)
+}
 function rest_auth_login_create(payload) {
   return financeAPI.post(`/rest-auth/login/`, payload)
 }
@@ -49,6 +67,12 @@ export const apiService = {
   api_docs_schema_retrieve,
   api_v1_login_create,
   api_v1_signup_create,
+  api_v1_test_list,
+  api_v1_test_create,
+  api_v1_test_retrieve,
+  api_v1_test_update,
+  api_v1_test_partial_update,
+  api_v1_test_destroy,
   rest_auth_login_create,
   rest_auth_logout_create,
   rest_auth_password_change_create,
